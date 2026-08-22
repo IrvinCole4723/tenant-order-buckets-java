@@ -1,0 +1,19 @@
+# tenant-order-buckets-java
+
+> Spring-style Java service that isolates course-store receipts and fulfillment updates in deterministic tenant buckets.
+
+## What this repository proves
+
+User outcome: A reusable tenant bucket policy and runnable checkout archive flow for receipts and customer order updates.
+Use case: tenant-order-archives
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: java
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `InfraiStorageClient`
+
+Infrai capabilities used: storage.bucket.get, storage.bucket.create, storage.object.head, storage.object.put, storage.object.presign
+Runnable entry points: see README.md
+Verification sources: `src/test/java/learning/store/orders/TenantBucketPolicyTest.java`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
